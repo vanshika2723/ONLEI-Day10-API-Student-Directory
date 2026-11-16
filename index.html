@@ -1,0 +1,212 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StudentHub | API Student Directory</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <div class="brand">
+                <div class="brand-icon">S</div>
+                <span>StudentHub</span>
+            </div>
+
+            <div class="sidebar-label">MENU</div>
+
+            <nav class="sidebar-nav">
+                <a href="#dashboard" class="nav-link active">
+                    <span>▦</span> Dashboard
+                </a>
+
+                <a href="#students" class="nav-link">
+                    <span>♙</span> Students
+                </a>
+
+                <a href="#posts" class="nav-link">
+                    <span>▤</span> Latest Posts
+                </a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <div class="help-card">
+                    <div class="help-icon">✦</div>
+                    <h3>Learning Together</h3>
+                    <p>Explore student data and discover new posts.</p>
+                </div>
+
+                <div class="sidebar-footer">
+                    <span class="online-dot"></span>
+                    API Connected Project
+                </div>
+            </div>
+
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content" id="dashboard">
+
+            <!-- Topbar -->
+            <header class="topbar">
+
+                <div>
+                    <p class="breadcrumb">Workspace / Dashboard</p>
+                    <h2>Student Dashboard</h2>
+                </div>
+
+                <div class="topbar-right">
+                    <div class="profile-avatar">VK</div>
+                    <div class="profile-info">
+                        <strong>Student Admin</strong>
+                        <span>Administrator</span>
+                    </div>
+                </div>
+
+            </header>
+
+            <!-- Welcome Section -->
+            <section class="welcome-section">
+
+                <div class="welcome-content">
+                    <span class="welcome-tag">STUDENT MANAGEMENT</span>
+
+                    <h1>Welcome to <span>StudentHub!</span></h1>
+
+                    <p>
+                        Manage student information, explore records
+                        and discover the latest posts in one place.
+                    </p>
+                </div>
+
+                <div class="welcome-decoration">✦</div>
+
+            </section>
+
+            <!-- Statistics -->
+            <section class="stats-grid">
+
+                <div class="stat-card">
+                    <div class="stat-icon purple">♙</div>
+                    <div>
+                        <p>Total Students</p>
+                        <h2 id="studentCount">--</h2>
+                        <span>API Records</span>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon blue">▤</div>
+                    <div>
+                        <p>Total Posts</p>
+                        <h2 id="postCount">--</h2>
+                        <span>Available Posts</span>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon green">✓</div>
+                    <div>
+                        <p>API Status</p>
+                        <h2 id="apiStatus">Ready</h2>
+                        <span>Waiting for request</span>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Students Section -->
+            <section class="content-section" id="students">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="section-tag">DIRECTORY</span>
+                        <h2>Student Directory</h2>
+                        <p>Explore sample student information.</p>
+                    </div>
+
+                    <button class="primary-btn" id="loadUsers">
+                        ↻ Load Students
+                    </button>
+
+                </div>
+
+                <div class="search-box">
+                    <span>⌕</span>
+                    <input
+                        type="text"
+                        id="studentSearch"
+                        placeholder="Search students by name, email or city..."
+                    >
+                </div>
+
+                <p class="status-message" id="studentStatus" aria-live="polite">
+                    Click Load Students to fetch student records.
+                </p>
+
+                <div class="student-grid" id="userList"></div>
+
+            </section>
+
+            <!-- Posts Section -->
+            <section class="content-section posts-section" id="posts">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="section-tag">DISCOVER</span>
+                        <h2>Latest Posts</h2>
+                        <p>Read the latest posts fetched from the API.</p>
+                    </div>
+
+                    <button class="primary-btn" id="loadPosts">
+                        ↻ Load Posts
+                    </button>
+
+                </div>
+
+                <div class="search-box">
+                    <span>⌕</span>
+                    <input
+                        type="text"
+                        id="postSearch"
+                        placeholder="Search posts by title..."
+                    >
+                </div>
+
+                <p class="status-message" id="postStatus" aria-live="polite">
+                    Click Load Posts to fetch posts.
+                </p>
+
+                <div class="posts-grid" id="postsList"></div>
+
+            </section>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <p>© 2026 StudentHub. Built with HTML, CSS & JavaScript.</p>
+                <span>Powered by Fetch API</span>
+            </footer>
+
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
